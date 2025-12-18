@@ -65,9 +65,10 @@ fun EchoInputScreen(viewModel: AppViewModel) {
     if (showAddDialog && categories.isNotEmpty()) {
         FoodDialog(
             categories = categories,
-            onDismiss = { },
+            onDismiss = { showAddDialog = false },
             onSave = { name, price, categoryId ->
                 viewModel.insert(Food(0, name, price.toFloat(), categoryId.toLong()))
+                showAddDialog = false
             }
         )
     }
@@ -76,9 +77,10 @@ fun EchoInputScreen(viewModel: AppViewModel) {
         FoodDialog(
             initialFood = food,
             categories = categories,
-            onDismiss = {},
+            onDismiss = {editFood = null},
             onSave = { name, price, categoryId ->
                 viewModel.update(Food(food.id, name, price.toFloat(), categoryId.toLong()))
+                editFood = null
             }
         )
     }
