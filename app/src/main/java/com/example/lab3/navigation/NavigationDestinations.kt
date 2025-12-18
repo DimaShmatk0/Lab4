@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.graphics.vector.ImageVector
 
@@ -19,13 +20,15 @@ sealed class AppScreen(
         AppScreen(NavigationDestinations.EmailCompose, "Compose", Icons.Default.Email)
 
     object ItemSearch : AppScreen(NavigationDestinations.ItemSearch, "Search", Icons.Default.Search)
+    object PostList : AppScreen(NavigationDestinations.PostList, "API", Icons.Default.List)
 }
 
 val mainScreens = listOf(
     AppScreen.Counter,
     AppScreen.TextDisplay,
     AppScreen.EmailMain,
-    AppScreen.ItemSearch
+    //AppScreen.ItemSearch
+    AppScreen.PostList
 )
 
 
@@ -34,6 +37,8 @@ object NavigationDestinations {
     const val Counter = "counter"
     const val TextDisplay = "form"
     const val ItemSearch = "search"
+
+    const val PostList = "post_list"
 
     // Граф пошти
     const val EmailNavGraph = "email_nav_graph"

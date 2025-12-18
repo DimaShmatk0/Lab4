@@ -18,6 +18,9 @@ room = "2.8.4"
 runtimeLivedata = "1.9.5"
 ksp = "2.2.21-2.0.4"
 foundation = "1.10.0"
+runtime = "1.10.0"
+litertSupportApi = "1.4.1"
+material3 = "1.4.0"
 
 
 [libraries]
@@ -49,6 +52,9 @@ google-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "runtime" }
+litert-support-api = { group = "com.google.ai.edge.litert", name = "litert-support-api", version.ref = "litertSupportApi" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

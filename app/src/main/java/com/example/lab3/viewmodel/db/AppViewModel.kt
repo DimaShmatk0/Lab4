@@ -1,5 +1,6 @@
 package com.example.lab3.viewmodel.db
 
+import com.example.lab3.model.ListItem
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import androidx.lifecycle.LiveData
@@ -22,9 +23,14 @@ class AppViewModel(
     fun update(food: Food) = viewModelScope.launch { foodRepository.update(food) }
     fun delete(food: Food) = viewModelScope.launch { foodRepository.delete(food) }
 
+    fun update(category: Category) = viewModelScope.launch { categoryRepository.update(category) }
+    fun insert(category: Category) = viewModelScope.launch { categoryRepository.insert(category) }
+    fun delete(category: Category) = viewModelScope.launch { categoryRepository.delete(category) }
+
+
     class AppViewModelFactory(
         private val foodRepository: FoodRepository,
-        private val categoryRepository: CategoryRepository // тут теж твій клас
+        private val categoryRepository: CategoryRepository
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(AppViewModel::class.java)) {
@@ -34,4 +40,6 @@ class AppViewModel(
             throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
+
+
 }
