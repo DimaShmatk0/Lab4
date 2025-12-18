@@ -66,6 +66,8 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.leanback)
     implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.litert.support.api)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
@@ -86,6 +88,15 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+    implementation("com.google.code.gson:gson:2.11.0")
+    // Jetpack Compose dependencies
+    implementation("androidx.activity:activity-compose:1.9.2")
+    implementation("androidx.compose.material3:material3:1.3.0")
+    implementation("androidx.compose.ui:ui:1.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
 }
 
 

@@ -22,6 +22,7 @@ class AppViewModel(
     fun update(food: Food) = viewModelScope.launch { foodRepository.update(food) }
     fun delete(food: Food) = viewModelScope.launch { foodRepository.delete(food) }
 
+
     class AppViewModelFactory(
         private val foodRepository: FoodRepository,
         private val categoryRepository: CategoryRepository // тут теж твій клас
